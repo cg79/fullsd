@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - "9.6"
+
+branches:
+  only:
+    - master
+
+sudo: false # Allows Travis to run this project in container
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: scripts/deploy.sh
+  on:
+    branch: master
+
+
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change

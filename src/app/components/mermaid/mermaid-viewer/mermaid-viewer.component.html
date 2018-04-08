@@ -1,0 +1,8 @@
+<p>
+  mermaid-viewer works!
+</p>g
+
+
+<textarea [(ngModel)]="code" (change)="codeChanged()" ></textarea>
+
+<div [innerHTML]="renderedCode| keepHtml"></div>

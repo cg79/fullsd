@@ -1,0 +1,267 @@
+<!--https://www.slant.co/topics/389/~best-node-js-web-frameworks-->
+
+<div class="Page-Content">
+
+
+  <h1 class="QuestionHeader-Title" itemprop="name">
+    <span class="_question-link">Inregistrare cursuri IT</span>
+  </h1>
+  <div class="Contributors-StatContainer QuestionHeader-ContributorStats">
+    <div class="Contributors-StatBar">
+      <div class="Contributors-Stat">
+        <!--<div class="Contributors-Stat-Value">#<span class="Contributors-Stat-Unit"></span></div>-->
+        <div class="Contributors-Stat-Label title">Front-end</div>
+      </div>
+      <div class="Contributors-Stat hide-minimum">
+        <!--<div class="Contributors-Stat-Value">#<span class="Contributors-Stat-Unit"></span></div>-->
+        <div class="Contributors-Stat-Label title">Back-end</div>
+      </div>
+      <div class="Contributors-Stat">
+        <div class="Contributors-Stat-Value">
+          <!--<div class="Contributors-Stat-Value">#<span class="Contributors-Stat-Unit"></span></div>-->
+          <meta class="_created-datetime" itemprop="datePublished" content="2013-02-28T00:37:07.000Z">
+        </div>
+
+        <div class="Contributors-Stat-Label title">DevOps</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<hr/>
+<div class="CardList-Container">
+
+  <div class="container">
+    <div class="col-md-8">
+      <div class="row">
+        <span class="full center-block title center">Full Stack Developer</span>
+      </div>
+      <div class="row">
+        <div class="list-group">
+          <div class="list-group-item title center">Sfaturi</div>
+          <div class="list-group-item">Completeaza rubrica 'Sondaj'</div>
+          <div class="list-group-item">Analizeaza cursurile</div>
+          <div class="list-group-item">Cere parerea unei persoane din domeniul IT daca aceste cursuri ar fi potrivite
+            pentru tine
+          </div>
+          <div class="list-group-item">Scrie-ne sau contacteaza-ne pentru orice nelamuriri</div>
+        </div>
+      </div>
+
+      <form class="" #subForm="ngForm" autocomplete="false">
+        <div *ngIf="!user" class="row">
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="firstName">{{localizationService.language.create_user.fname}}</label>
+                <input type="text"
+                       class="form-control"
+                       placeholder="Nume" autofocus required
+                       name="firstName"
+                       id="firstName"
+                       [(ngModel)]="ui.firstName"
+                       maxlength="50"
+                >
+
+                <div class="row col-md-12 error">
+                  <!--{{ currentForm.form.controls.firstName.errors | json}}-->
+                  <div class="form-control-feedback1"
+                       *ngIf="currentForm && currentForm.form.controls.firstName && currentForm.form.controls.firstName.errors &&
+              (currentForm.form.controls.firstName.dirty)">
+
+                    <p class="error" *ngIf="currentForm.form.controls.firstName.errors.required">Introduceti numele</p>
+                    <p class="error" *ngIf="currentForm.form.controls.firstName.errors.maxLength">Lungimea numelui este
+                      prea mare</p>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="lastName">{{localizationService.language.create_user.lName}}</label>
+                <input type="text"
+                       class="form-control"
+                       placeholder="Prenume" required
+                       name="lastName"
+                       id="lastName"
+                       [(ngModel)]="ui.lastName"
+                       maxlength="50"
+                >
+                <div class="row col-md-12 error">
+                  <!--{{ currentForm.form.controls.firstName.errors | json}}-->
+                  <div class="form-control-feedback1" *ngIf="currentForm && currentForm.form.controls.lastName && currentForm.form.controls.lastName.errors &&
+              (currentForm.form.controls.lastName.dirty)">
+
+                    <p class="error" *ngIf="currentForm.form.controls.lastName.errors.required">Introduceti
+                      prenumele</p>
+                    <p class="error" *ngIf="currentForm.form.controls.lastName.errors.maxLength">Lungimea numelui este
+                      prea mare</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="email">{{localizationService.language.email}}</label>
+                <input type="text"
+                       class="form-control"
+                       placeholder="Email" autofocus required
+                       name="email"
+                       id="email"
+                       [(ngModel)]="ui.email"
+                       pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                       maxlength="50"
+                >
+
+                <div class="row col-md-12 error">
+                  <!--{{ currentForm.form.controls.firstName.errors | json}}-->
+                  <div class="form-control-feedback1" *ngIf="currentForm && currentForm.form.controls.email && currentForm.form.controls.email.errors &&
+              (currentForm.form.controls.email.dirty)">
+
+                    <p class="error" *ngIf="currentForm.form.controls.email.errors.required">Introduceti email-ul</p>
+                    <p class="error" *ngIf="currentForm.form.controls.email.errors.maxLength">Lungimea numelui este prea
+                      mare</p>
+                    <small [hidden]="!currentForm.form.controls.email.errors.pattern">Emailul este incorect</small>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="password">{{localizationService.language.password}}</label>
+                <input type="password" class="form-control" placeholder="Password" required name="password"
+                       id="password"
+                       maxlength="50"
+                       required
+                       [(ngModel)]="ui.password">
+
+                <div class="row1" *ngIf="currentForm && currentForm.controls.password && currentForm.controls.password.errors &&
+              (currentForm.controls.password.dirty)">
+                  <p class="error" *ngIf="currentForm.form.controls.password.errors.required">Introduceti parola</p>
+                  <p class="error" *ngIf="currentForm.form.controls.password.errors.maxLength">Lungimea parolei este
+                    prea mare</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--<div class="row">-->
+            <div class="form-group">
+              <label for="phone">{{localizationService.language.create_user.phone}}</label>
+              <input type="text"
+                     class="form-control"
+                     placeholder="Telefon"
+                     name="phone"
+                     required
+                     id="phone"
+                     [textMask]="{mask: mask}"
+                     pattern="\(\d{4}\) \d{3}-\d{3}"
+                     [(ngModel)]="ui.phone"
+              >
+              <div class="row1 col-mdt-12 error">
+                <div class="form-control-feedback1"  *ngIf="currentForm && currentForm.form.controls.phone && currentForm.form.controls.phone.errors &&
+              (currentForm.form.controls.phone.dirty)">
+
+                  <p *ngIf="currentForm.form.controls.phone.errors.required">Introduceti telefonul</p>
+                  <p *ngIf="currentForm.form.controls.phone.errors.pattern">Telefonul nu este complet</p>
+                  <!--<p *ngIf="currentForm.form.controls.phone.errors.required">Lungimea numelui este prea mare</p>-->
+                </div>
+              </div>
+            </div>
+          <!--</div>-->
+
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="register">
+          <span class="center center-block bg-info info ">{{message}}</span>
+          <button *ngIf="showRegisterButton" type="button"
+                  class="btn1 full center-block title center btn-success inregistrarebtn " (click)="registerToCourse()">
+            Inregistare
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="row">
+        <span class="full center-block title center">Avantaje</span>
+      </div>
+      <div class="list-group">
+
+        <div class="list-group-item title center">Descriere</div>
+
+        <div class="list-group-item list-group-item-action">
+          <span>Comunicare zilnica</span>
+          <div class="pull-right">
+            <i class="fa fa-check check"></i>
+          </div>
+        </div>
+
+        <div class="list-group-item list-group-item-action">
+          <span>Exercitii zilnice</span>
+          <div class="pull-right">
+            <i class="fa fa-check check"></i>
+          </div>
+        </div>
+
+        <div class="list-group-item list-group-item-action">
+          <span>Lucru in echipa</span>
+          <div class="pull-right">
+            <i class="fa fa-check check"></i>
+          </div>
+        </div>
+
+        <div class="list-group-item list-group-item-action">
+          <span>Feedback periodic</span>
+          <div class="pull-right">
+            <i class="fa fa-check check"></i>
+          </div>
+        </div>
+
+        <div class="list-group-item list-group-item-action">
+          <span>Ajutorul grupului</span>
+          <div class="pull-right">
+            <i class="fa fa-check check"></i>
+          </div>
+        </div>
+
+        <div class="list-group-item list-group-item-action">
+          <span>Colaborare cu firme</span>
+          <div class="pull-right">
+            <i class="fa fa-check check"></i>
+          </div>
+        </div>
+
+        <div class="list-group-item list-group-item-action">
+          <span>Cursuri complete</span>
+          <div class="pull-right">
+            <i class="fa fa-check check"></i>
+          </div>
+        </div>
+
+        <div class="list-group-item list-group-item-action">
+          <span>Ajutor la angajare si dupa</span>
+          <div class="pull-right">
+            <i class="fa fa-check check"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
