@@ -97,14 +97,14 @@ export class FileComponentComponent  {
 
   _setActive() {
     this.borderColor = this.activeColor;
-    if (this.imageSrc.length === 0) {
+    if (this.imageSrc && this.imageSrc.length === 0) {
       this.iconColor = this.activeColor;
     }
   }
 
   _setInactive() {
     this.borderColor = this.baseColor;
-    if (this.imageSrc.length === 0) {
+    if (this.imageSrc && this.imageSrc.length === 0) {
       this.iconColor = this.baseColor;
     }
   }
