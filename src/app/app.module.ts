@@ -115,7 +115,7 @@ let providers = {
   //   "clientId": "LINKEDIN_CLIENT_ID"
   // },
   "facebook": {
-    "clientId": "1123667347736940",
+    "clientId": "2046457209013195",
     "apiVersion": "v2.11" //like v2.4
   }};
 
