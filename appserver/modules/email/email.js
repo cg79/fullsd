@@ -160,7 +160,7 @@ module.exports = function() {
           if (this.transporter == null) {
             const smtpConfig = {
               host:"ran.gazduire.ro",
-              port:26,
+              port:587,
               secure:false,
               auth: {
                 user: 'office@fullsd.com',
