@@ -1,0 +1,9 @@
+ sudo npm install -g PACKAGE-NAME --unsafe-perm=true --allow-root
+ https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-16-04
+
+
+ If you're absolutely certain that it doesn't contain anything you want to have (including subdirectories), delete it with
+
+sudo rm -r -f /path/
+-r is for recursive, so it will delete the folder and subfolders, even if it is non-empty
+-f is for force (this might be unnecessary).

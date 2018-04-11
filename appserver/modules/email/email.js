@@ -159,12 +159,12 @@ module.exports = function() {
           // create reusable transporter object using SMTP transport
           if (this.transporter == null) {
             const smtpConfig = {
-              host:"mail.bestdeveloper.ro",
-              port:26,
+              host:"ran.gazduire.ro",
+              port:465,
               secure:false,
               auth: {
-                user: 'support@bestdeveloper.ro',
-                pass: 'supportpassword'
+                user: 'office@fullsd.com',
+                pass: 'tarantula9379'
               },
               tls:{
                 rejectUnauthorized: false
@@ -174,7 +174,7 @@ module.exports = function() {
           }
 
           let emailMessage = {
-            from: 'support@bestdeveloper.ro',
+            from: 'office@fullsd.com',
             to: obj.to,
             subject: obj.subject,
             html: obj.body

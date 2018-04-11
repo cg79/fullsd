@@ -44,7 +44,7 @@ module.exports = function() {
         email.sendEmail(
           {
             to: data.userInfo.email,
-            bcc: "office@bestdeveloper.ro",
+            bcc: "office@fullsd.com",
             subject:"Survey",
             body:htmlResult
           }

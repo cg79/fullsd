@@ -7,7 +7,7 @@ import * as io from 'socket.io-client';
 @Injectable()
 export class SocketService {
   // private url = 'http://localhost:6002';
-  private url = 'http://bestdeveloper.ro';
+  private url = 'https://fullsd.com';
   private socket;
   private subscribers = {};
 
