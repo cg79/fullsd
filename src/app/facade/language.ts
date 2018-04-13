@@ -5,8 +5,18 @@
 export default new class Language {
 
   RO: any = {
+    edu:{
+      level1:"Incepator",
+      level2:"Mediu",
+      level3:"Avansat",
+    },
+    what:{
+      p1:"Consultanta",
+      p2:"Colaborare",
+      p3:"Instruire"
+    },
     home: {
-      t1: "Cursuri programare Cluj",
+      t1: "Instruire programare Cluj",
       t2: "Consultanta IT",
       t3: "Colaborare la realizarea proiectelor",
       t4: "Ar ajuta sa vedem nivelul cunostintelor folosind linkul de mai jos.",
@@ -29,7 +39,7 @@ export default new class Language {
     },
     menu: {
       home: "Acasa",
-      news: "Stirea zilei",
+      news: "Stiri",
       exercise: "Exercitiu",
       sondaj: "Sondaj",
       cursuri: "Cursuri",
@@ -38,7 +48,10 @@ export default new class Language {
       setari: "Setari",
       login: "Logare",
       logout: "Logout",
-      personaldata: "Datele mele"
+      personaldata: "Datele mele",
+      education:"Instruire",
+      consulting:"Consulting",
+      collaboration:"collaboration"
     },
     slide: {
       algo: "Algoritmica este esentiala pentru un programator. Se vor face in jur de 150 de exercitii pornind de la simplu la complex. De exemplu, pentru stabilirea valorii produselor dintr-un cos de cumparaturi se foloseste algoritmica. ",
@@ -167,6 +180,16 @@ export default new class Language {
     }
   };
   EN: any = {
+    edu:{
+      level1:"Beginer",
+      level2:"Medium",
+      level3:"Advanced",
+    },
+    what:{
+      p1:"Consulting",
+      p2:"Collaboration",
+      p3:"IT Courses"
+    },
     home: {
       t1: "Programming courses Cluj",
       t2: "IT consulting",
@@ -191,7 +214,7 @@ export default new class Language {
     },
     menu: {
       home: "Home",
-      news: "Daily News",
+      news: "News",
       exercise: "Exercise",
       sondaj: "Survey",
       cursuri: "Courses",
@@ -200,7 +223,10 @@ export default new class Language {
       setari: "Settings",
       login: "Login",
       logout: "Logout",
-      personaldata: "My info"
+      personaldata: "My info",
+      education:"Education",
+      consulting:"Consulting",
+      collaboration:"collaboration"
     },
     slide: {
       algo: "Algorithm is essential for a programmer. There will be about 150 exercises starting from simple to complex. For example, algorithm is used to determine the value of products in a shopping cart.",

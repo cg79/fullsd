@@ -21,6 +21,7 @@ import {ChangePasswordComponent} from "../ui/user/change-password/change-passwor
 import {EditUserComponent} from "../ui/user/edit-user/edit-user.component";
 import {ConfirmEmailComponent} from "../ui/user/confirm-email/confirm-email.component";
 import {UserListComponent} from "../ui/user/user-list/user-list.component";
+import {InstruireComponent} from "../instruire/instruire.component";
 
 
 const appRoutes: Routes = [
@@ -28,6 +29,39 @@ const appRoutes: Routes = [
     path: 'home',
     component: HomeComponent
   },
+  {
+    path: 'education',
+    component: InstruireComponent,
+    children:[
+      {
+        path:'courses',
+        component:CoursesComponent
+      },
+      {
+        path:'dailyChallenge',
+        component:DailyChallengeComponent,
+        canActivate:[AuthGuard]
+      },
+      {
+        path:'survey',
+        component:EvaluationComponent,
+        canActivate:[AuthGuard],
+        children:[
+          {
+            path: 'add',
+            component: QuizAddComponent
+
+          }
+        ]
+      },
+      {
+        path:'registercourse',
+        component:CourseRegistrationComponent,
+        // canActivate:[AuthGuard]
+      },
+    ]
+  },
+
   {
     path:'users',
     component: UserListComponent,
@@ -78,18 +112,18 @@ const appRoutes: Routes = [
     component:ResetPasswordComponent,
     canActivate:[AuthGuard]
   },
-  {
-    path:'survey',
-    component:EvaluationComponent,
-    canActivate:[AuthGuard],
-    children:[
-      {
-        path: 'add',
-        component: QuizAddComponent
-
-      }
-    ]
-  },
+  // {
+  //   path:'survey',
+  //   component:EvaluationComponent,
+  //   canActivate:[AuthGuard],
+  //   children:[
+  //     {
+  //       path: 'add',
+  //       component: QuizAddComponent
+  //
+  //     }
+  //   ]
+  // },
 
   {
     path:'addquestions',
@@ -103,20 +137,20 @@ const appRoutes: Routes = [
     path:'dailyNews',
     component:DailyNewsComponent
   },
-  {
-    path:'dailyChallenge',
-    component:DailyChallengeComponent,
-    canActivate:[AuthGuard]
-  },
-  {
-    path:'registercourse',
-    component:CourseRegistrationComponent,
-    // canActivate:[AuthGuard]
-  },
-  {
-    path:'courses',
-    component:CoursesComponent
-  },
+  // {
+  //   path:'dailyChallenge',
+  //   component:DailyChallengeComponent,
+  //   canActivate:[AuthGuard]
+  // },
+  // {
+  //   path:'registercourse',
+  //   component:CourseRegistrationComponent,
+  //   // canActivate:[AuthGuard]
+  // },
+  // {
+  //   path:'courses',
+  //   component:CoursesComponent
+  // },
   // {
   //   path: 'admin',
   //   loadChildren: 'app/admin/admin.module#AdminModule',

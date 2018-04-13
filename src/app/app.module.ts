@@ -106,6 +106,10 @@ import { ConfirmEmailComponent } from './ui/user/confirm-email/confirm-email.com
 import { BdRadioComponent } from './components/input/bd-radio/bd-radio.component';
 import { UserListComponent } from './ui/user/user-list/user-list.component';
 import {LocalizationService} from "./services/localization/localization.service";
+import { InstruireComponent } from './instruire/instruire.component';
+import { ConsultingComponent } from './ui/homePresentation/consulting/consulting.component';
+import { CollaborationComponent } from './ui/homePresentation/collaboration/collaboration.component';
+import { TrainingItComponent } from './ui/homePresentation/training-it/training-it.component';
 
 let providers = {
   // "google": {
@@ -174,6 +178,10 @@ let providers = {
     ConfirmEmailComponent,
     BdRadioComponent,
     UserListComponent,
+    InstruireComponent,
+    ConsultingComponent,
+    CollaborationComponent,
+    TrainingItComponent,
 
 
     //
