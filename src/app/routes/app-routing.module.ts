@@ -22,6 +22,7 @@ import {EditUserComponent} from "../ui/user/edit-user/edit-user.component";
 import {ConfirmEmailComponent} from "../ui/user/confirm-email/confirm-email.component";
 import {UserListComponent} from "../ui/user/user-list/user-list.component";
 import {InstruireComponent} from "../instruire/instruire.component";
+import {InstruireDetailsComponent} from "../instruire/instruire-details/instruire-details.component";
 
 
 const appRoutes: Routes = [
@@ -33,6 +34,10 @@ const appRoutes: Routes = [
     path: 'education',
     component: InstruireComponent,
     children:[
+      {
+        path:'details',
+        component: InstruireDetailsComponent
+      },
       {
         path:'courses',
         component:CoursesComponent

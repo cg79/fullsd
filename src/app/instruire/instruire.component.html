@@ -1,11 +1,10 @@
-
 <div class="tab-content center">
   <div class="tab-pane active" id="men">
     <ul class="nav-list list-inline">
       <li>
         <!--<img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png">-->
 
-        <button type="button" class="btn btn-link" [routerLink]="['/education']">
+        <button type="button" class="btn btn-link" [routerLink]="['/education/details']">
           <i class="fa fa-home fas"></i>
           <span class="title">{{localizationService.language.menu.education}}</span>
         </button>
@@ -32,7 +31,7 @@
           <i class="fa fa-question fas"></i>
           <span class="title">{{localizationService.language.menu.sondaj}}</span>
         </button>
-        </li>
+      </li>
       <li>
         <!--<img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png">-->
         <button type="button" class="btn btn-link" [routerLink]="['/education/registercourse']">
@@ -45,9 +44,9 @@
   </div>
 </div>
 
-<router-outlet></router-outlet>
 
 <div class="container">
-  instruire
-  </div>
+  <router-outlet></router-outlet>
+</div>
 
+<app-footer></app-footer>

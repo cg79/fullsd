@@ -110,6 +110,7 @@ import { InstruireComponent } from './instruire/instruire.component';
 import { ConsultingComponent } from './ui/homePresentation/consulting/consulting.component';
 import { CollaborationComponent } from './ui/homePresentation/collaboration/collaboration.component';
 import { TrainingItComponent } from './ui/homePresentation/training-it/training-it.component';
+import { InstruireDetailsComponent } from './instruire/instruire-details/instruire-details.component';
 
 let providers = {
   // "google": {
@@ -182,6 +183,7 @@ let providers = {
     ConsultingComponent,
     CollaborationComponent,
     TrainingItComponent,
+    InstruireDetailsComponent,
 
 
     //

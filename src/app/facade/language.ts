@@ -13,10 +13,12 @@ export default new class Language {
     what:{
       p1:"Consultanta",
       p2:"Colaborare",
-      p3:"Instruire"
+      p3:"Training",
+      soft_dev: "Software Development",
+      build_teams: "Creare Echipe"
     },
     home: {
-      t1: "Instruire programare Cluj",
+      t1: "Training programare Cluj",
       t2: "Consultanta IT",
       t3: "Colaborare la realizarea proiectelor",
       t4: "Ar ajuta sa vedem nivelul cunostintelor folosind linkul de mai jos.",
@@ -49,9 +51,9 @@ export default new class Language {
       login: "Logare",
       logout: "Logout",
       personaldata: "Datele mele",
-      education:"Instruire",
-      consulting:"Consulting",
-      collaboration:"collaboration"
+      education:"Training",
+      consulting:"Consultanta",
+      collaboration:"Colaborare"
     },
     slide: {
       algo: "Algoritmica este esentiala pentru un programator. Se vor face in jur de 150 de exercitii pornind de la simplu la complex. De exemplu, pentru stabilirea valorii produselor dintr-un cos de cumparaturi se foloseste algoritmica. ",
@@ -188,7 +190,9 @@ export default new class Language {
     what:{
       p1:"Consulting",
       p2:"Collaboration",
-      p3:"IT Courses"
+      p3:"IT Courses",
+      soft_dev: "Software Development",
+      build_teams: "Building Teams"
     },
     home: {
       t1: "Programming courses Cluj",
@@ -224,9 +228,9 @@ export default new class Language {
       login: "Login",
       logout: "Logout",
       personaldata: "My info",
-      education:"Education",
+      education:"Training",
       consulting:"Consulting",
-      collaboration:"collaboration"
+      collaboration:"Collaboration"
     },
     slide: {
       algo: "Algorithm is essential for a programmer. There will be about 150 exercises starting from simple to complex. For example, algorithm is used to determine the value of products in a shopping cart.",
