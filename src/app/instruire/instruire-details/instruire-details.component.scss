@@ -127,7 +127,8 @@ a.woocommerce-LoopProduct-link
 }
 
 .vscroll{
-  overflow-y: auto;
+  max-height: 300px;
+  overflow-y: scroll;
 }
 
 //ul.descul li{
