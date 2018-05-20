@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import mermaid from 'mermaid';
+// import mermaid from 'mermaid';
 import {UUID} from 'angular2-uuid';
 import markdownIt from 'markdown-it';
 import markdownItMermaid from 'markdown-it-mermaid';
 // import markdownItMermaidPro from 'markdown-it-mermaid-pro';
-declare const mermaid;
+// declare const mermaid;
+import * as mermaid from "mermaid";
 
 @Component({
   selector: 'app-mermaid-viewer',
@@ -23,12 +24,12 @@ export class MermaidViewerComponent implements OnInit {
   async codeChanged(){
     var that = this;
     var hack = Math.random().toString(36).substring(7).replace(/\d/, "a")
-    // mermaid.render(hack, this.code, function(svgCode) {
-    //   let timeoutId = setTimeout(() => {
-    //     that.renderedCode = svgCode;
-    //
-    //   }, 10);
-    // });
+    mermaid.render('theGraph', this.code, function(svgCode) {
+      let timeoutId = setTimeout(() => {
+        that.renderedCode = svgCode;
+
+      }, 10);
+    });
 
     // this.mdi.render(hack, this.code, function(svgCode) {
     //   let timeoutId = setTimeout(() => {
@@ -42,10 +43,14 @@ export class MermaidViewerComponent implements OnInit {
   }
 
   ngOnInit() {
-    // mermaid.initialize({startOnLoad: true, theme: 'forest'});
+    mermaid.initialize({startOnLoad: true, theme: 'forest'});
     //mermaid.initialize({startOnLoad: true});
     // this.mdi = markdownIt();
     // this.mdi.use(markdownItMermaid);
+
+    // mermaid.initialize({
+    //   theme: "forest"
+    // });
 
 
   }
