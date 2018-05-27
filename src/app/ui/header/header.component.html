@@ -62,10 +62,10 @@
           </li>
 
 
-          <li class="navli">
-            <a routerLink="/dailyNews" routerLinkActive="active"><i class="ficon fa fa-newspaper-o"
-                                                                    aria-hidden="true"></i>{{localizationService.language.menu.news}}</a>
-          </li>
+          <!--<li class="navli">-->
+            <!--<a routerLink="/dailyNews" routerLinkActive="active"><i class="ficon fa fa-newspaper-o"-->
+                                                                    <!--aria-hidden="true"></i>{{localizationService.language.menu.news}}</a>-->
+          <!--</li>-->
           <!--<li class="navli">-->
             <!--<a routerLink="/dailyChallenge" routerLinkActive="active"><i class="ficon fa fa-trophy"-->
                                                                          <!--aria-hidden="true"></i>{{localizationService.language.menu.exercise}}</a>-->
@@ -74,21 +74,21 @@
             <!--<a routerLink="/survey" routerLinkActive="active"><i class="ficon fa fa-pencil-square-o"-->
                                                                  <!--aria-hidden="true"></i>{{localizationService.language.menu.sondaj}}</a>-->
           <!--</li>-->
-          <!--<li class="navli">-->
-            <!--<a routerLink="/courses" routerLinkActive="active"><i class="ficon fa fa-book" aria-hidden="true"></i>{{localizationService.language.menu.cursuri}}</a>-->
-          <!--</li>-->
+          <li class="navli">
+            <a routerLink="/courses" routerLinkActive="active"><i class="ficon fa fa-book" aria-hidden="true"></i>{{localizationService.language.menu.cursuri}}</a>
+          </li>
           <!--*ngIf="canRegisterCourse"-->
           <!--<li class="navli">-->
             <!--<a routerLink="/registercourse" routerLinkActive="active"><i class="ficon fa fa-handshake-o"-->
                                                                          <!--aria-hidden="true"></i>{{localizationService.language.menu.inscriere}}-->
             <!--</a>-->
           <!--</li>-->
-          <li class="navli">
-            <a routerLink="/education/details" routerLinkActive="active"><i class="ficon fa fa-file-text" aria-hidden="true"></i>{{localizationService.language.menu.collaboration}}</a>
-          </li>
-          <li class="navli">
-            <a routerLink="/about" routerLinkActive="active"><i class="ficon fa fa-file-text" aria-hidden="true"></i>{{localizationService.language.menu.despre}}</a>
-          </li>
+          <!--<li class="navli">-->
+            <!--<a routerLink="/education/details" routerLinkActive="active"><i class="ficon fa fa-file-text" aria-hidden="true"></i>{{localizationService.language.menu.collaboration}}</a>-->
+          <!--</li>-->
+          <!--<li class="navli">-->
+            <!--<a routerLink="/about" routerLinkActive="active"><i class="ficon fa fa-file-text" aria-hidden="true"></i>{{localizationService.language.menu.despre}}</a>-->
+          <!--</li>-->
           <li class="navli" *ngIf="canEditNews">
             <a routerLink="/addNews" routerLinkActive="active"><i class="ficon fa fa-file-text" aria-hidden="true"></i>add
               news</a>
@@ -173,11 +173,14 @@
           </li>
 
           <li class="navli">
-            <select (change)="onLanguageChanged($event.target.value)" class="d-inline-block1 dropdown1 dropdown">
-              <option *ngFor="let country of countries" value={{country.name}}>
-                {{country.name}}
-              </option>
-            </select>
+            <!--<select (change)="onLanguageChanged($event.target.value)" class="d-inline-block1 dropdown1 dropdown">-->
+              <!--<option *ngFor="let country of countries" value={{country.name}}>-->
+                <!--{{country.name}}-->
+              <!--</option>-->
+            <!--</select>-->
+            <!--{{selectedCountry}}-->
+            <span class="lang" *ngIf="selectedCountry=='RO'" (click)="onLanguageChanged('EN')"> Engleza </span>
+            <span class="lang" *ngIf="selectedCountry =='EN'" (click)="onLanguageChanged('RO')"> Romanian </span>
           </li>
 
         </ul>

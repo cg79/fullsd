@@ -20,7 +20,6 @@ import { CodeExecutionService } from './services/code/codeExecution'
 import { Angular2SocialLoginModule } from 'angular2-social-login';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './ui/header/header.component';
-import  { MainSliderComponent } from './ui/mainSlider/mainSlider.component';
 import  { TypoComponent } from './ui/type/typo.component';
 import  { HomePresentationComponent } from './ui/homePresentation/homePresentation.component';
 
@@ -81,21 +80,9 @@ import { ForgotPasswordComponent } from './ui/user/forgot-password/forgot-passwo
 import { SetNewPasswordComponent } from './ui/user/set-new-password/set-new-password.component';
 import { ChangePasswordComponent } from './ui/user/change-password/change-password.component';
 import { TextMaskModule } from 'angular2-text-mask';
-
+import { ModalModule  } from 'ngx-bootstrap';
 
 import { SwiperModule } from 'angular2-useful-swiper';
-// import { SwiperModule } from 'ngx-swiper-wrapper';
-// import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
-// import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
-//
-// const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
-//   direction: 'horizontal',
-//   slidesPerView: 'auto'
-// };
-
-
-
-// https://www.npmjs.com/package/@nomadreservations%2Fngx-codemirror#2-project-structure
 window["$"] = $;
 window["jQuery"] = $;
 import { MarkdownModule } from 'angular2-markdown';
@@ -111,6 +98,9 @@ import { ConsultingComponent } from './ui/homePresentation/consulting/consulting
 import { CollaborationComponent } from './ui/homePresentation/collaboration/collaboration.component';
 import { TrainingItComponent } from './ui/homePresentation/training-it/training-it.component';
 import { InstruireDetailsComponent } from './instruire/instruire-details/instruire-details.component';
+import { ContactComponent } from './contact/contact.component';
+import { WhoweareComponent } from './whoweare/whoweare.component';
+import { ShowContactDialogComponent } from './contact/show-contact-dialog/show-contact-dialog.component';
 
 let providers = {
   // "google": {
@@ -137,7 +127,7 @@ let providers = {
     EscapeHtmlPipe,
     LoginComponent,
     HeaderComponent,
-    MainSliderComponent,
+    // MainSliderComponent,
     // SwipperComponent,
     TypoComponent,
     HomePresentationComponent,
@@ -184,6 +174,9 @@ let providers = {
     CollaborationComponent,
     TrainingItComponent,
     InstruireDetailsComponent,
+    ContactComponent,
+    WhoweareComponent,
+    ShowContactDialogComponent,
 
 
     //
@@ -223,11 +216,14 @@ let providers = {
     MatButtonModule,
     MatSelectModule,
     MatIconModule,
-    MatCardModule
-
+    MatCardModule,
+    ModalModule.forRoot()
   ],
   providers: [HttpWrapperService,CodeExecutionService, AuthGuard, SimpleTimer,PubSubService, SocketService, UtilsService,NewsService, LocalizationService ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ContactComponent
+  ],
 })
 
 

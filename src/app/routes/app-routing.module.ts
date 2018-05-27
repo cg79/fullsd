@@ -31,6 +31,10 @@ const appRoutes: Routes = [
     component: HomeComponent
   },
   {
+    path:'courses',
+    component:CoursesComponent
+  },
+  {
     path: 'education',
     component: InstruireComponent,
     children:[

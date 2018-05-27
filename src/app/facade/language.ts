@@ -5,6 +5,13 @@
 export default new class Language {
 
   RO: any = {
+    contactFrm:{
+      contact:"Contacteaza-ne",
+      desc: "Scrieti mesajul mai jos.",
+      msg: "Mesaj",
+      name: "Nume",
+      email:"Email"
+    },
     edu:{
       level1:"Incepator",
       level2:"Mediu",
@@ -14,13 +21,14 @@ export default new class Language {
       p1:"Consultanta",
       p2:"Colaborare",
       p3:"Training",
-      soft_dev: "Software Development",
+      soft_dev: "Software Development - Outsourcing",
       build_teams: "Creare Echipe"
 
     },
     home: {
       t1: "Training programare Cluj",
       t2: "Consultanta IT",
+      outsourcing: "Outsourcing",
       t3: "Colaborare la realizarea proiectelor",
       t4: "Ar ajuta sa vedem nivelul cunostintelor folosind linkul de mai jos.",
       t5: "Verificare cunostinte",
@@ -184,6 +192,13 @@ export default new class Language {
     }
   };
   EN: any = {
+    contactFrm:{
+      contact:"Contact Us",
+      desc: "Please send your message below. We will get back to you at the earliest!",
+      msg: "Message",
+      name: "Name",
+      email:"Email"
+    },
     edu:{
       level1:"Beginer",
       level2:"Medium",
@@ -193,13 +208,14 @@ export default new class Language {
       p1:"Consulting",
       p2:"Collaboration",
       p3:"IT Courses",
-      soft_dev: "Software Development",
+      soft_dev: "Software Development - Outsourcing",
       build_teams: "Building Teams"
 
     },
     home: {
       t1: "Programming courses Cluj",
       t2: "IT consulting",
+      outsourcing: "Outsourcing",
       t3: "Collaboration on project implementation",
       t4: "It would help to see the level of knowledge using the below link.",
       t5: "Checking knowledge",
