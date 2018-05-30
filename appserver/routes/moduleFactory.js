@@ -1,5 +1,7 @@
 const newsService = require('../modules/news/newsService');
 const securityService = require('../modules/security/security');
+const messagesService = require('../modules/messages/messagesService');
+
 
 function getModule(name) {
   console.log(name);
@@ -10,6 +12,10 @@ function getModule(name) {
     }
     case 'security':{
       return securityService();
+      break;
+    }
+    case 'messages':{
+      return messagesService;
       break;
     }
   }
