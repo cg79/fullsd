@@ -13,7 +13,10 @@ import {LocalStorageService} from "angular-2-local-storage";
 export class ContactComponent implements OnInit {
   @Output() action = new EventEmitter();
 
-  public user : any;
+  public user : any = {
+    name:"",
+    email:""
+  };
   constructor(public bsModalRef: BsModalRef,
               public localizationService: LocalizationService,
               private localStorageService: LocalStorageService) { }

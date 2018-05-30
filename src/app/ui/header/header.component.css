@@ -4,10 +4,13 @@ header{
   margin-bottom: 0;
   /*background-color: #fcfcfc;*/
 }
+
 .lang{
   padding-top: 15px;
   padding-bottom: 15px;
+  cursor: pointer;
 }
+
 .navli select{
   border:0px;
   outline:0px;

@@ -69,7 +69,6 @@ export class HeaderComponent implements OnInit{
 
   msgReceive(msg){
 
-    debugger;
     this.userCount = msg.usersCount;
   }
 

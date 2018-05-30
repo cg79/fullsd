@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
-import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule, MatCardModule } from '@angular/material';
+// import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule, MatCardModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AceEditorModule } from 'ng2-ace-editor';
 import { AppComponent } from './app.component';
@@ -12,9 +12,9 @@ import { AppRoutingModule }        from './routes/app-routing.module';
 import { HomeComponent }        from './home/home.component';
 import { NotFoundComponent }        from './not-found/notfound.component';
 import { AboutComponent }  from './about/about.component';
-import { JavascriptComponent }  from './cursuri/javascript/javascript.component';
+// import { JavascriptComponent }  from './cursuri/javascript/javascript.component';
 import { ObjectKeysPipe }  from './pipes/objectKeys.pipe';
-import { HtmlNodeComponent }  from './cursuri/javascript/components/htmlnode.component';
+// import { HtmlNodeComponent }  from './cursuri/javascript/components/htmlnode.component';
 import { EscapeHtmlPipe } from './pipes/keep-html.pipe'
 import { CodeExecutionService } from './services/code/codeExecution'
 import { Angular2SocialLoginModule } from 'angular2-social-login';
@@ -74,7 +74,6 @@ import { CoddingMirrorComponent } from './coding/codding-mirror/codding-mirror.c
 import { PagerWrapperComponent } from './components/pager-wrapper/pager-wrapper.component';
 import { PaginationModule } from 'ngx-bootstrap';
 import { NotificationWrapperComponent } from './components/notification-wrapper/notification-wrapper.component';
-import { SimpleNotificationsModule } from 'angular2-notifications';
 import { CreateUserComponent } from './ui/user/create-user/create-user.component';
 import { ForgotPasswordComponent } from './ui/user/forgot-password/forgot-password.component';
 import { SetNewPasswordComponent } from './ui/user/set-new-password/set-new-password.component';
@@ -121,9 +120,9 @@ let providers = {
     HomeComponent,
     NotFoundComponent,
     AboutComponent,
-    JavascriptComponent,
+    // JavascriptComponent,
     ObjectKeysPipe,
-    HtmlNodeComponent,
+    // HtmlNodeComponent,
     EscapeHtmlPipe,
     LoginComponent,
     HeaderComponent,
@@ -206,7 +205,6 @@ let providers = {
 
     BsDropdownModule.forRoot(),
     PaginationModule.forRoot(),
-    SimpleNotificationsModule.forRoot(),
     TabsModule.forRoot(),
     MarkdownModule.forRoot(),
 

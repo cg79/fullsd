@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent }  from '../home/home.component';
 import { NotFoundComponent }    from '../not-found/notfound.component';
 import { AboutComponent }  from '../about/about.component';
-import { JavascriptComponent }  from '../cursuri/javascript/javascript.component';
+// import { JavascriptComponent }  from '../cursuri/javascript/javascript.component';
 import { LoginComponent }  from '../login/login.component';
 import {ResetPasswordComponent} from "../login/resetpassword/resetpassword.component";
 import {AuthGuard} from "./auth-guard.service";
@@ -97,10 +97,10 @@ const appRoutes: Routes = [
     path:'about',
     component:AboutComponent
   },
-  {
-    path:'javascript',
-    component:JavascriptComponent
-  },
+  // {
+  //   path:'javascript',
+  //   component:JavascriptComponent
+  // },
   {
     path:'login',
     component:LoginComponent,
