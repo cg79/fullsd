@@ -5,6 +5,19 @@ const coreUtils = require('../../utils/core.utils')();
 class MessagesService {
 
   async addContactMessage(data) {
+  //api/pub
+  // {
+  //   "proxy":{
+  //   "method":"addContactMessage",
+  //     "module": "messages"
+  // },
+  //   "data":{
+  //   "message" :"salut",
+  //     "email":"test@tes1t.com",
+  //     "title" :"ttt"
+  // }
+  //
+  // }
 
   const {email, message, title } = data;
   let {_id, toEmail } = data;
@@ -20,6 +33,7 @@ class MessagesService {
       _id = record._id;
     }
   }
+  
 
   var findCriteria = {};
   if (_id) {
