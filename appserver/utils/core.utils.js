@@ -2,6 +2,7 @@
 var LZString = require("lz-string");
 // var logger = require("../shared/logger/loggerService");
 const moment = require('moment');
+const md5 = require('md5');
 module.exports = function() {
     var data = {
         zip: {
@@ -34,6 +35,13 @@ module.exports = function() {
                 return JSON.parse(rez);
             }
         },
+      hash: function(a,b){
+        var s = a+b;
+        if(b<a){
+          s = b+a;
+        }
+        return md5(s);
+      },
         funcFromString: function(inputParamName, bodyFunction) {
             //http://stackoverflow.com/questions/7650071/is-there-a-way-to-create-a-function-from-a-string-with-javascript
             var fctResult = null;
