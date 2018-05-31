@@ -1,11 +1,9 @@
 const mongoQuery = require('../../utils/mongoQuery')();
-const ObjectID = require("mongodb").ObjectID;
+const ObjectID = require('mongodb').ObjectID;
 const coreUtils = require('../../utils/core.utils')();
 
 class MessagesService {
-
-  async addContactMessage(data) {
-  //api/pub
+  // api/pub
   // {
   //   "proxy":{
   //   "method":"addContactMessage",
@@ -16,258 +14,179 @@ class MessagesService {
   //     "email":"test@tes1t.com",
   //     "title" :"ttt"
   // }
-  //
-  // }
+  async addContactMessage(data) {
+    const { email, message, title } = data;
+    let { _id, toEmail } = data;
 
-  const {email, message, title } = data;
-  let {_id, toEmail } = data;
-
-  if(!toEmail) {
-    toEmail = "office@bestdeveloper.ro";
-  }
-
-  if(!_id) {
-    const record = await mongoQuery.collection('messages').findOne({email:email});
-    console.log(record);
-    if (record){
-      _id = record._id;
+    if (!toEmail) {
+      toEmail = 'office@bestdeveloper.ro';
     }
-  }
-  
 
-  var findCriteria = {};
-  if (_id) {
-    findCriteria._id = ObjectID(_id);
-  } else {
-    // findCriteria._id = new ObjectID();
-    findCriteria.fromEmail  = email;
-    findCriteria.toEmail = toEmail;
-    findCriteria.hash = coreUtils.hash(email, toEmail);
-  }
-
-
-  var setCriteria = {
-    '$push': {
-      items: {
-        id: coreUtils.uuid(),
-        title: title ? title : "",
-        date: new Date(),
-        message: message ? message : "",
-        read: false
+    if (!_id) {
+      const record = await mongoQuery.collection('messages').findOne({ email });
+      console.log(record);
+      if (record) {
+        _id = record._id;
       }
-    },
-    '$inc':{
-        msgCount:1
     }
+
+
+    const findCriteria = {};
+    if (_id) {
+      findCriteria._id = ObjectID(_id);
+    } else {
+    // findCriteria._id = new ObjectID();
+      findCriteria.fromEmail = email;
+      findCriteria.toEmail = toEmail;
+      findCriteria.hash = coreUtils.hash(email, toEmail);
+    }
+
+
+    const setCriteria = {
+      $push: {
+        items: {
+          id: coreUtils.uuid(),
+          title: title || '',
+          date: new Date(),
+          message: message || '',
+          read: false,
+        },
+      },
+      $inc: {
+        msgCount: 1,
+      },
+    };
+
+    const dbMessages = await mongoQuery.collection('messages').update(findCriteria, setCriteria, {
+      upsert: true,
+    });
+
+    return dbMessages;
   }
 
-  var dbMessages = await mongoQuery.collection('messages').update(findCriteria, setCriteria, {
-    upsert: true
-  });
-
-  return dbMessages;
-}
-
+  // {
+  //   "proxy":{
+  //     "method":"addReplyMessage",
+  //     "module": "messages"
+  //   },
+  //   "data":{
+  //     "message" :"salut",
+  //     "email":"test@tes1t.com",
+  //     "title" :"ttt",
+  //     "_id":"5b0d6512752717bcd30afeef",
+  //     "id": "848d0951-f153-a413-56f9-65e7e3acf302"
+  //   }
+  //  }
   async addReplyMessage(data) {
+    const { _id, id, message } = data;
 
-  const {_id, id, message } = data;
+    const findCriteria =
+    {
+      _id: ObjectID(_id),
+    };
 
+    const itemId = coreUtils.uuid();
+    const setCriteria = {
+      $push: {
+        items: {
+          id: itemId,
+          date: new Date(),
+          message: message || '',
+          read: false,
+          parentId: id,
+        },
+      },
+    };
 
-  var findCriteria = {};
-  if (_id) {
-    findCriteria._id = ObjectID(_id);
-  } else {
-    // findCriteria._id = new ObjectID();
-    findCriteria.fromEmail  = email;
-    findCriteria.toEmail = toEmail;
-    findCriteria.hash = coreUtils.hash(email, toEmail);
+    const dbMessages = await mongoQuery.collection('messages').update(findCriteria, setCriteria, {
+      upsert: true,
+    });
+
+    const updateFilter = {
+      _id: ObjectID(_id),
+      'items.id': id,
+    };
+
+    const updateCriteria = {
+      $push: {
+        'items.$.msgs': itemId,
+      },
+    };
+
+    console.log(updateFilter);
+    const updateResult = await mongoQuery.collection('messages').update(updateFilter, updateCriteria, false);
+
+    return {
+      dbMessages,
+      updateResult,
+    };
   }
 
+  // {
+  //   "proxy":{
+  //     "method":"findItemsForParent",
+  //     "module": "messages"
+  //   },
+  //   "data":{
+  //     "message" :"salut",
+  //     "email":"test@tes1t.com",
+  //     "title" :"ttt",
+  //     "_id":"5b0d6512752717bcd30afeef",
+  //     "parentId": "848d0951-f153-a413-56f9-65e7e3acf302"
+  //   }
+  //  }
+  async findItemsForParent(data) {
+    const { _id, parentId } = data;
 
-  var setCriteria = {
-    '$push': {
+    const findCriteria = {
+      _id: ObjectID(_id),
+      'items.message': 'salut1',
+    };
+
+    const selection = {
       items: {
-        id: coreUtils.uuid(),
-        title: title ? title : "",
-        date: new Date(),
-        message: message ? message : "",
-        read: false
-      }
-    },
-    '$inc':{
-      msgCount:1
-    }
-  }
+        $elemMatch: {
+          $eq: {
+            'items.message': 'salut1',
+          },
+        },
+      },
+    };
+    // const dbMessages = await mongoQuery.collection('messages').aggregate(
+    //   { $match: {_id: ObjectID(_id) }},
+    //   { $unwind: '$items'},
+    //   { $match: {'items.status':1}}).toArray();
 
-  var dbMessages = await mongoQuery.collection('messages').update(findCriteria, setCriteria, {
-    upsert: true
-  });
+    // const dbMessages =  await mongoQuery.collection('messages').find(
+    //   { 'items.title': 'salut1'},
+    // { 'items.$': 1 });
+    
+    // return dbMessages;
 
-  return dbMessages;
-}
-
-
-  async addItemForNews(data, tokenObj) {
-  data.userId = tokenObj.id;
-  const resp = await mongoQuery.collection('news').update(
-    { _id: data._id },
-    { $push: { items: data } });
-
-  // console.log(resp);
-  return resp;
-}
-
-  async getNews(data, tokenObj) {
-
-  const filterCriteria = {};
-  if(data.filter)
-  {
-    filterCriteria.newsType = {$eq:data.filter.newsType};
-    if(data.filter.date)
-    {
-      // const filterDate = new Date(data.filter.date);
-      // const isoDate = new Date(filterDate.toISOString());
-
-      filterCriteria["date.jsdate"]= { $lte: data.filter.date};
-      // filterCriteria["date.mili"]= { $lte: data.filter.mili};
-    }
-
-  }
-  // data.userId = tokenObj.id;
-  const query = mongoQuery.newsSchema.News
-  //const query = mongoQuery.collection('news')
-    .findOne(filterCriteria).sort({ "date.jsdate":-1 });//
-  // .populate('title');
-
-  const resp = await query; //mongoQuery.executeQuery(query);
-
-  console.log(resp);
-  return resp;
-}
-
-  async getAllNews(data, tokenObj) {
-
-  const filterCriteria = {};
-  if(data.filter)
-  {
-    filterCriteria.newsType = {$eq:data.filter.newsType};
-    if(data.filter.date)
-    {
-      // const filterDate = new Date(data.filter.date);
-      // const isoDate = new Date(filterDate.toISOString());
-
-      //filterCriteria["date.jsdate"]= { $lte: data.filter.date};
-      // filterCriteria["date.mili"]= { $lte: data.filter.mili};
-    }
-
-  }
-  // data.userId = tokenObj.id;
-  const query = mongoQuery.newsSchema.News
-  //const query = mongoQuery.collection('news')
-    .find(filterCriteria).sort({ p:1 });//
-  // .populate('title');
-
-  const resp = await query; //mongoQuery.executeQuery(query);
-
-  console.log(resp);
-  return resp;
-}
-
-
-  async solveExercise(data, tokenObj) {
-  data.userId = tokenObj.id;
-  data.date = new Date();
-
-  const updateCriteria = {
-    'items.resp': data.resp,
-    date:new Date()
-  };
-
-  const resp = await mongoQuery.collection('exercises').update(
-    {
-      problemId: data._id,
-      'items.userId': tokenObj.id
-    },
-    {
-      $set:  updateCriteria
-    },
-    {
-      upsert:true
+    const agg = [];
+    agg.push({
+      $match: {
+        _id: ObjectID(_id),
+      },
     });
 
-  console.log(resp);
-  return resp;
-}
+    const projection = {};
+    projection.$project = {
+      items: {
+        $filter: {
+          input: '$items',
+          as: 'item',
+          cond: {
+            $eq: ['$$item.message', 'salut1'],
+          },
+        },
+      },
+    };
+    agg.push(projection);
 
-  async getSolvedUsersCount(data, tokenObj) {
-  data.userId = tokenObj.id;
-  data.date = new Date();
-
-  const updateCriteria = {
-    'items.resp': data.resp
-  };
-
-  const resp = await mongoQuery.collection('exercises').count(
-    {
-      problemId: data._id
-    });
-
-  console.log(resp);
-  return resp;
-}
-
-  async getSolvedSolutionForAUser(data, tokenObj) {
-  data.userId = tokenObj.id;
-  data.date = new Date();
-
-  const updateCriteria = {
-    'items.resp': data.resp
-  };
-
-  const resp = await mongoQuery.collection('exercises').find(
-    {
-      problemId: data._id,
-      'items.userId': data.userId
-    });
-
-  console.log(resp);
-  return resp;
-}
-
-  async getPagedSolutionsForAExercise(obj, tokenObj) {
-  const filterCriteria = {
-    problemId: obj.filter.problemId,
-  };
-
-
-  const fields = {problemId:1,'userId.email':1};
-  var filter = mongoQuery.exercisesSchema.Exercises
-    .find(filterCriteria)
-    .populate('items.userId', 'firstName')
-    // .select(fields);
-
-
-  if (obj.pager) {
-    obj.pager.itemsOnPage = parseInt(obj.pager.itemsOnPage);
-    obj.pager.pageNo--;
-    filter = filter.limit(obj.pager.itemsOnPage)
-      .skip(obj.pager.itemsOnPage * obj.pager.pageNo)
-    // query = query.sort({
-    //   dateAdded: -1
-    // });
+    const dbMessages = await mongoQuery.collection('messages').aggregate(agg).toArray();
+    return dbMessages;
   }
-  // filter = filter.toArray();
-  const solvedQuestions = await mongoQuery.executeQuery(filter);
-
-  console.log(JSON.stringify(solvedQuestions));
-  const count = await mongoQuery.collection('exercises').count(filterCriteria);
-  return {
-    items: solvedQuestions,
-    count: count,
-    pageNo: obj.pager ? obj.pager.pageNo + 1 : 0
-  };
-}
-
 }
 
 module.exports = new MessagesService();
