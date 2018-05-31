@@ -177,7 +177,7 @@ class MessagesService {
           input: '$items',
           as: 'item',
           cond: {
-            $eq: ['$$item.message', 'salut1'],
+            $eq: ['$$item.parentId', parentId],
           },
         },
       },
