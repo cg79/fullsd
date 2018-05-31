@@ -1,3 +1,10 @@
+
+/* .content1
+{
+  background-image: url("/images/slider-3.png");
+} */
+
+
 .pre-img
 {
   width: 100%;
@@ -11,7 +18,7 @@
 }
 
 .text {
-  position: absolute;
+  /* position: absolute; */
   top: 10%;
   left: 15%;
 }

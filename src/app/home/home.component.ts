@@ -26,48 +26,9 @@ import {LocalizationService} from "../services/localization/localization.service
   ]
 })
 
-//https://angularfirebase.com/lessons/animation-examples-in-angular-4-3/
-@Injectable()
-
-// @ViewChild('usefulSwiper') usefulSwiper: SwipperComponent;
-
+// @Injectable()
   export class HomeComponent implements OnInit {
 
-  // const interleaveOffset = 0.5;
-  // https://codepen.io/udovichenko/pen/LGeQae
-  //http://idangero.us/swiper/#.V9C3w4VOLaI
-  //http://idangero.us/swiper/api/#initialize
-  config: Object = {
-    pagination: '.swiper-pagination',
-    paginationClickable: true,
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-    spaceBetween: 30,
-    slidesPerView:3,
-    loop:true,
-    on: {
-      init: function () {
-        // console.log('swiper initialized');
-      },
-    },
-    effect:'coverflow',//"slide", "fade", "cube", "coverflow" or "flip"
-    // coverflow: {
-    //   rotate: 0,
-    //   stretch: 0,
-    //   depth: 250,
-    //   modifier: 1,
-    //   slideShadows : false,
-    // },
-    //tdFlow: {
-      // rotate : 30,
-      // stretch :10,
-      // depth: 150,
-      // modifier : 1,
-      // shadows:true
-
-    //},
-
-  };
 
   private text: string;
   private  httpService: HttpWrapperService;

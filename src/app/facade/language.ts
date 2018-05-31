@@ -10,7 +10,9 @@ export default new class Language {
       desc: "Scrieti mesajul mai jos.",
       msg: "Mesaj",
       name: "Nume",
-      email:"Email"
+      email:"Email",
+      send:"Trimite",
+      sendbtn:"Trimite Mesaj"
     },
     edu:{
       level1:"Incepator",
@@ -197,7 +199,9 @@ export default new class Language {
       desc: "Please send your message below. We will get back to you at the earliest!",
       msg: "Message",
       name: "Name",
-      email:"Email"
+      email:"Email",
+      send:"Send",
+      sendbtn:"Send Message"
     },
     edu:{
       level1:"Beginer",
