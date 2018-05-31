@@ -1,7 +1,7 @@
 const mongoQuery = require('../../utils/mongoQuery')();
 const ObjectID = require('mongodb').ObjectID;
 const coreUtils = require('../../utils/core.utils')();
-const email = require('../email/email')();
+const emailService = require('../email/email')();
 
 class MessagesService {
   // api/pub
@@ -20,7 +20,7 @@ class MessagesService {
     let { _id, toEmail } = data;
 
     if (!toEmail) {
-      toEmail = 'office@bestdeveloper.ro';
+      toEmail = 'office@fullsd.ro';
     }
 
     if (!_id) {
@@ -61,7 +61,8 @@ class MessagesService {
     const dbMessages = await mongoQuery.collection('messages').update(findCriteria, setCriteria, {
       upsert: true,
     });
-
+    console.log('ddddd');
+    emailService.emailMessageReceived(data);
     return dbMessages;
   }
 
