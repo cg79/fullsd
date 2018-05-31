@@ -1,6 +1,7 @@
 const mongoQuery = require('../../utils/mongoQuery')();
 const ObjectID = require('mongodb').ObjectID;
 const coreUtils = require('../../utils/core.utils')();
+const email = require('../email/email')();
 
 class MessagesService {
   // api/pub

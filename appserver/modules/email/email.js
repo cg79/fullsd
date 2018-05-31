@@ -9,7 +9,6 @@ const config = require('../../config/development');
 var logger = require("./../logger/logger.js")();
 
 module.exports = function() {
-
     var models = {
         mainPath:'./templates/',
         transporter: null,
