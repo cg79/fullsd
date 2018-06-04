@@ -5,6 +5,11 @@
 export default new class Language {
 
   RO: any = {
+    h:{
+      dev:"Avand o experienta semnificativa in realizarea produselor soft, oferim mentenanta, crearea in totalitate a unui produs soft, fie el desktop, web sau aplicatie pentru telefoane.
+      Calitatea serviciilor de soft este asigurata de implementarea celor mai noi metodologii, experienta noastra si comunicare cat mai rapida",
+      training:""
+    },
     contactFrm:{
       contact:"Contacteaza-ne",
       desc: "Scrieti mesajul mai jos.",
