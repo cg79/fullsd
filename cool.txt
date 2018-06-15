@@ -1,3 +1,0 @@
-https://jaspero.co/resources/projects/ng-select
-http://firefox-dev.tools/debugger.html/
-https://neil.fraser.name/software/JS-Interpreter/docs.html

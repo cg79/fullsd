@@ -8,15 +8,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "strictNullChecks":false,
     "typeRoots": [
       "node_modules/@types"
     ],
-	"types": [
-      "jquery",
-      "bootstrap",
-      "node"
-	],
     "lib": [
       "es2017",
       "dom"

@@ -88,6 +88,8 @@
 .img-thumb {
   display: block;
   overflow: hidden;
+  text-align: center;
+  margin-top: 5px;
 }
 
 .section-heading span:before, .home4-testimonial .title-block:before {
@@ -131,6 +133,15 @@ a.woocommerce-LoopProduct-link
   overflow-y: scroll;
 }
 
-//ul.descul li{
-//  list-style-type: none;
-//}
+.ofers{
+  display: flex;
+  flex-wrap: wrap;
+  .item{
+    flex: 0 48%;
+    background-color: white;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 8px;
+    //border: red solid;
+  }
+}
