@@ -1,42 +1,42 @@
 <div class="modal-header">
-  <h4 class="modal-title pull-left">{{title}}</h4>
+  <h4 class="modal-title pull-left">{{localizationService.language.contactFrm.contact}}</h4>
   <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 
+<div class="m15">
 <div class="row">
   <div class="col-md-6 col-md-offset-3" id="form_container">
-    <h2>{{localizationService.language.contactFrm.contact}}</h2>
+    <h2></h2>
     <p>
       {{localizationService.language.contactFrm.desc}}
     </p>
     <form role="form" method="post" id="reused_form">
-
       <div class="row">
         <div class="col-sm-12 form-group">
           <label for="message">
             {{localizationService.language.contactFrm.msg}}:</label>
-          <textarea class="form-control" thype="textarea" name="message" id="message" maxlength="6000" rows="7"></textarea>
+          <textarea class="form-control" thype="textarea" name="message" id="message" maxlength="6000" rows="7"  [(ngModel)]="user.message"></textarea>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-6 form-group">
           <label for="name">
             {{localizationService.language.contactFrm.name}}:</label>
-          <input type="text" class="form-control" id="name" name="name" required="" value="{{user.name}}">
+          <input type="text" class="form-control" id="name" name="name" required=""   [(ngModel)]="user.name">
         </div>
         <div class="col-sm-6 form-group">
           <label for="email">
             {{localizationService.language.contactFrm.email}}:</label>
-          <input type="email" class="form-control" id="email" name="email" required="" value="{{user.email}}">
+          <input type="email" class="form-control" id="email" name="email" required=""   [(ngModel)]="user.email">
         </div>
       </div>
 
 
       <div class="row">
         <div class="col-sm-12 form-group">
-          <button type="submit" class="btn btn-lg btn-default pull-right" (click)="clickOk()">Send →</button>
+          <button type="submit" class="btn btn-lg btn-default pull-right" (click)="clickOk()">{{localizationService.language.contactFrm.send}} →</button>
         </div>
       </div>
 
@@ -50,4 +50,5 @@
 
     </div>
   </div>
+</div>
 </div>

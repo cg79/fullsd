@@ -1,19 +1,41 @@
-//https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
-//https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens#set-up-our-node-application-(package-json)
+// https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
+// https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens#set-up-our-node-application-(package-json)
 
-var jsonfile = require('jsonfile')
-const renderer = require("../renderer/renderer")();
+let jsonfile = require('jsonfile');
+const renderer = require('../renderer/renderer')();
 const nodemailer = require('nodemailer');
 const config = require('../../config/development');
 // const sesTransport = require('nodemailer-ses-transport');
-var logger = require("./../logger/logger.js")();
+const logger = require('./../logger/logger.js')();
 
-module.exports = function() {
+module.exports = function () {
+  let models = {
+    mainPath: './templates/',
+    transporter: null,
+    emailMessageReceived(obj){
+        
+        if (!obj.langId) {
+            obj.langId = "ro";
+        }
+        var langId = obj.langId.toLowerCase();
 
-    var models = {
-        mainPath:'./templates/',
-        transporter: null,
-        emailCreateUser: function(obj, to) {
+        if (langId != "ro" && langId != "en") {
+            langId = "ro";
+        }
+
+        var templatePath = this.mainPath + langId + "/message.html";
+        var htmlResult = renderer.render(templatePath, obj);
+
+       
+        var data = {
+            to: "office@fullsd.com",
+            subject: "Message recived",
+            body: htmlResult
+        };
+
+        this.sendEmail(data);
+        },
+    emailCreateUser(obj, to) {
             logger.log("emailCreateUser" + JSON.stringify(obj));
             if (!obj.langId) {
                 obj.langId = "ro";
@@ -40,7 +62,7 @@ module.exports = function() {
             this.sendEmail(data);
 
         },
-        emailfbUser: function(obj) {
+    emailfbUser(obj) {
             if (!obj.langId) {
                 obj.langId = "ro";
             }
@@ -65,7 +87,7 @@ module.exports = function() {
             };
             this.sendEmail(data);
         },
-        emailForgotPassword: function(obj, to) {
+    emailForgotPassword(obj, to) {
             if (!obj.langId) {
                 obj.langId = "ro";
             }
@@ -89,7 +111,7 @@ module.exports = function() {
             this.sendEmail(data);
 
         },
-        emailNewFileAdded: function(obj) {
+    emailNewFileAdded(obj) {
             try {
                 if (!obj.langId) {
                     obj.langId = "ro";
@@ -116,7 +138,7 @@ module.exports = function() {
             }
 
         },
-        emailStartBuy: function(obj, to) {
+    emailStartBuy(obj, to) {
             logger.log("emailStartBuy" + JSON.stringify(obj));
             if (!obj.langId) {
                 obj.langId = "ro";
@@ -144,7 +166,7 @@ module.exports = function() {
 
         },
 
-        sendEmail: function(obj) {
+    sendEmail(obj) {
 
             // if (this.transporter == null) {
             //     this.transporter = nodemailer.createTransport(sesTransport({
@@ -204,7 +226,7 @@ module.exports = function() {
             //  }
             //  logger.log('Message sent: ' + info.response);
             // });
-        }
-    };
-    return models;
-}
+        },
+  };
+  return models;
+};

@@ -3,27 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent }  from '../home/home.component';
 import { NotFoundComponent }    from '../not-found/notfound.component';
-import { AboutComponent }  from '../about/about.component';
-// import { JavascriptComponent }  from '../cursuri/javascript/javascript.component';
-import { LoginComponent }  from '../login/login.component';
-import {ResetPasswordComponent} from "../login/resetpassword/resetpassword.component";
+// import {ResetPasswordComponent} from "../ui/user/login/resetpassword/resetpassword.component";
 import {AuthGuard} from "./auth-guard.service";
-import {EvaluationComponent} from "../ui/evaluation/evaluation.component";
-import {QuizAddComponent} from "../ui/evaluation/quiz/add/quiz.add.component";
-import {CourseRegistrationComponent} from "../ui/course-registration/course-registration.component";
 import {CoursesComponent} from "../ui/courses/courses.component";
-import {NewsManagementComponent} from "../ui/news-management/news-management.component";
-import {DailyNewsComponent} from "../ui/news-management/daily-news/daily-news.component";
-import {DailyChallengeComponent} from "../ui/daily-challenge/daily-challenge.component";
-import {CreateUserComponent} from "../ui/user/create-user/create-user.component";
-import {ForgotPasswordComponent} from "../ui/user/forgot-password/forgot-password.component";
-import {ChangePasswordComponent} from "../ui/user/change-password/change-password.component";
-import {EditUserComponent} from "../ui/user/edit-user/edit-user.component";
 import {ConfirmEmailComponent} from "../ui/user/confirm-email/confirm-email.component";
-import {UserListComponent} from "../ui/user/user-list/user-list.component";
-import {InstruireComponent} from "../instruire/instruire.component";
-import {InstruireDetailsComponent} from "../instruire/instruire-details/instruire-details.component";
-
+import { ModuleWithProviders } from '@angular/core';
 
 const appRoutes: Routes = [
   {
@@ -34,141 +18,47 @@ const appRoutes: Routes = [
     path:'courses',
     component:CoursesComponent
   },
-  {
-    path: 'education',
-    component: InstruireComponent,
-    children:[
-      {
-        path:'details',
-        component: InstruireDetailsComponent
-      },
-      {
-        path:'courses',
-        component:CoursesComponent
-      },
-      {
-        path:'dailyChallenge',
-        component:DailyChallengeComponent,
-        canActivate:[AuthGuard]
-      },
-      {
-        path:'survey',
-        component:EvaluationComponent,
-        canActivate:[AuthGuard],
-        children:[
-          {
-            path: 'add',
-            component: QuizAddComponent
 
-          }
-        ]
-      },
-      {
-        path:'registercourse',
-        component:CourseRegistrationComponent,
-        // canActivate:[AuthGuard]
-      },
-    ]
-  },
 
-  {
-    path:'users',
-    component: UserListComponent,
-    canActivate:[AuthGuard]
-  },
-  {
-    path: 'forgotPassword',
-    component: ForgotPasswordComponent
-  },
-  {
-    path: 'edituser',
-    component: EditUserComponent
-  },
+  // {
+  //   path: 'forgotPassword',
+  //   component: ForgotPasswordComponent
+  // },
+  // {
+  //   path: 'edituser',
+  //   component: EditUserComponent
+  // },
   {
     path: 'confirmemail',
     component: ConfirmEmailComponent
   },
-  {
-    path: 'resetpassword',
-    component: ChangePasswordComponent
-  },
+  // {
+  //   path: 'resetpassword',
+  //   component: ChangePasswordComponent
+  // },
 
   {
     path:'about',
-    component:AboutComponent
-  },
-  // {
-  //   path:'javascript',
-  //   component:JavascriptComponent
-  // },
-  {
-    path:'login',
-    component:LoginComponent,
-    // children: [
-    //   {
-    //     path: 'resetpassword',
-    //     component: ResetPasswordComponent
-    //   },
-    // ]
-  },
-  {
-    path:'createUser',
-    component:CreateUserComponent
+    loadChildren: '../about/about-module#AboutModule'
   },
 
-  {
-    path:'resetpassword',
-    component:ResetPasswordComponent,
-    canActivate:[AuthGuard]
-  },
   // {
-  //   path:'survey',
-  //   component:EvaluationComponent,
-  //   canActivate:[AuthGuard],
-  //   children:[
-  //     {
-  //       path: 'add',
-  //       component: QuizAddComponent
+  //   path:'login',
+  //   component:LoginComponent,
   //
-  //     }
-  //   ]
+  // },
+  // {
+  //   path:'createUser',
+  //   component:CreateUserComponent
   // },
 
-  {
-    path:'addquestions',
-    component:QuizAddComponent
-  },
-  {
-    path:'addNews',
-    component:NewsManagementComponent
-  },
-  {
-    path:'dailyNews',
-    component:DailyNewsComponent
-  },
   // {
-  //   path:'dailyChallenge',
-  //   component:DailyChallengeComponent,
+  //   path:'resetpassword',
+  //   component:ResetPasswordComponent,
   //   canActivate:[AuthGuard]
   // },
-  // {
-  //   path:'registercourse',
-  //   component:CourseRegistrationComponent,
-  //   // canActivate:[AuthGuard]
-  // },
-  // {
-  //   path:'courses',
-  //   component:CoursesComponent
-  // },
-  // {
-  //   path: 'admin',
-  //   loadChildren: 'app/admin/admin.module#AdminModule',
-  // },
-  // {
-  //   path: 'crisis-center',
-  //   loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule',
-  //   data: { preload: true }
-  // },
+  { path: 'user', loadChildren: '../ui/user/user-module#UserModule'},
+  // { path: 'user', loadChildren: () => UserModule},
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];
@@ -178,7 +68,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       {
-        enableTracing: false, // <-- debugging purposes only
+        enableTracing: true, // <-- debugging purposes only
         // preloadingStrategy: SelectivePreloadingStrategy,
 
       }
@@ -194,9 +84,3 @@ const appRoutes: Routes = [
 })
 export class AppRoutingModule { }
 
-
-/*
-Copyright 2017 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

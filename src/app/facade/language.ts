@@ -5,12 +5,37 @@
 export default new class Language {
 
   RO: any = {
+    who:{
+      who:"Cine Suntem",
+      n1:"Claudiu Gombos",
+      n1Desc:"Arhitect, certificari obtinute, programator, coordonator si trainer",
+      n2:"Ioan Lazar",
+      n2Desc: "Cadru didactic, programator, coordonator, consultant si arhitect",
+      echipa:"Echipa",
+      echipaDesc:"Toti participantii la cursuri au facut progrese enorme, sunt apreciati si entuziasmati sa participe la realizarea produselor soft.Oferim sprijin pentru integrarea intr-o echipa atat a participantilor la curs cat si programatorilor care ar dorii sa muncim impreuna"
+    },
+    h:{
+      dev:"Avand o experienta semnificativa in realizarea produselor soft, oferim mentenanta, crearea in totalitate a unui produs soft, fie el desktop, web sau aplicatie pentru telefoane. Calitatea serviciilor de soft este asigurata de implementarea celor mai noi metodologii, experienta noastra si comunicare cat mai rapida",
+      training:"Oferim training pentru imbunatatirea cunostintelor intr-o echipa, uniformizarea metodelor de lucru, folosirea celor mai noi si performante concepte de implementare a unui soft.   Consultanta in abordarea cat mai corecta a principiilor de dezvoltare a unui soft, arhitectura acestuia ,rezultatul fiind o productivitate crescuta asigurandu-se astfel si calitatea produsului Incercam sa ne adaptam cat mai bine cerintelor, printr-o cat mai buna comunicare, documentatie, suport",
+      team:"Cautam permanent persoane dornice sa se alature cu placere unei echipe, muncind (daca se poate) direct in proiectul dumneavoastra, oferind training, supraveghere, consultanta si suport.  Datorita faptului ca am inceput cu sustinerea unor cursuri cat mai profesionale, adaptate pietei si care acopera intr-o mare masura nevoile pietei, sustinem integrarea cursantilor in aceste proiecte, asigurandu-ne totodata de calitatea muncii",
+      angular:"Inca de la aparitia primei versiuni, urmam cele mai noi abordari si sabloane. Angular 2+ este folosit atat in partea de trainig cat si la crearea aplicatiilor, urmand cela mai noi practici",
+      react:"Partea de aplicatii SPA folosind virtual DOM este acoperita de aceste librarii. React, React Native il folosim in stransa legatura cu libraiile de testatre",
+      net:".Net, .Net Core, MVC, ASP.NET a fost utilizat periodic la realizarea produselor soft",
+      backend:"Acoperim partea de server cu o mare experienta in utilizarea .Net, Python, Node.js si Java. NetCore, ASP.NET, MVC sunt folosite deasemenea si discutam idei pentru a vedea ce se potriveste cel mai bine unui produs",
+      mobile:"Experienta in folosirea Ionic si a aplicatiilor native pentru android, iOS si Microsoft. Se observa o crestere mare in folosirea React Native si incercam sa tinem pasul cu tot ce apare nou.",
+      devops:"Acoperim partea de integrare si livrare continua a softului, procesele de testare, testarea automata si copierea automata a codului pe serverele de test sau productie",
+      services:"Servicii",
+      tech:"Tehnologii"
+    },
     contactFrm:{
       contact:"Contacteaza-ne",
       desc: "Scrieti mesajul mai jos.",
       msg: "Mesaj",
       name: "Nume",
-      email:"Email"
+      email:"Email",
+      send:"Trimite",
+      sendbtn:"Trimite Mesaj",
+      sent:"Mesajul a fost trimis"
     },
     edu:{
       level1:"Incepator",
@@ -148,7 +173,11 @@ export default new class Language {
       "password": "Parola",
       "forgot": "Am uitat parola",
       "login": "Logare",
-      "remember": "pastreaza parola pe acest calculator"
+      "remember": "pastreaza parola pe acest calculator",
+      "notp":"Introduceti parola",
+      "pLength":"Lungimea parolei este prea mare",
+      "resetP":"Resetare Parola",
+      "createU":"Creare Utilizator"
     },
     "create_user_screen": {
       "title": "Utilizator nou",
@@ -162,7 +191,10 @@ export default new class Language {
       "confirm": "Confirmare Parola",
       "create_user": "Inregistrare",
       "have_account": "Ai cont?",
-      "login_here": "Ecranul de logare"
+      "login_here": "Ecranul de logare",
+      "pf":"Persoana Fizica",
+      "company":"Firma",
+      "cmpName":"Nume Firma"
     },
     "change_password_screen": {
       "title": "Schimbare Parola",
@@ -192,12 +224,37 @@ export default new class Language {
     }
   };
   EN: any = {
+    who:{
+      who:"Who We Are",
+      n1:"Claudiu Gombos",
+      n1Desc:"Architect, certifications, programmer, coordinator and trainer",
+      n2:"Ioan Lazar",
+      n2Desc: "Teacher, programmer, coordinator, consultant and architect",
+      echipa:"The team",
+      echipaDesc:" All participants in the courses have made enormous advances, are appreciated and excited to participate in the development of soft products. We offer support for integrating into a team of both course participants and programmers who want to work together"
+    },
+    h:{
+      dev:"Having a significant experience in software development, we offer maintenance, complete creation of a software product, whether desktop, web or phone application. The quality of software services is ensured by implementing the latest methodologies, experience and communication as quickly as possible",
+      training:"We offer training to improve knowledge in a team, standardize work methods, use the latest and most advanced software implementation concepts. Consultancy in the correct approach to the principles of software development, its architecture, resulting in increased productivity, thus ensuring the quality of the product. We try to adapt our requirements as best as possible, through the best communication, documentation, support",
+      team:"We are always looking for people willing to join a team, working (if possible) directly in your project, offering training, supervision, consulting and support. Due to the fact that we started with the promotion of more professional courses, adapted to the market and which largely cover the needs of the market, we support the integration of the students in these projects, while ensuring the quality of the work",
+      angular:"Since the first version, we've been following the latest approaches and templates. Angular 2+ is used both in training and in creating applications, following the latest practices",
+      react:"The part of SPA applications using virtual DOM is covered by these libraries. React, React Native we use it closely with test puddles",
+      net:"Net, .Net Core, MVC, ASP.NET has been used periodically to develop software",
+      backend:"We cover the server side with great experience in using .Net, Python, Node.js and Java. NetCore, ASP.NET, MVC are also used and we discuss ideas to see what best suits a product",
+      mobile:"Experience in using Ionic and native applications for android, iOS and Microsoft. There is a big increase in using React Native and we're trying to keep up with everything that's new.",
+      devops:"We cover the integration and continuous delivery of software, test processes, automatic testing, and automatic code copying on test or production servers",
+      services:"Services",
+      tech:"Technologies"
+    },
     contactFrm:{
       contact:"Contact Us",
       desc: "Please send your message below. We will get back to you at the earliest!",
       msg: "Message",
       name: "Name",
-      email:"Email"
+      email:"Email",
+      send:"Send",
+      sendbtn:"Send Message",
+      sent:"The message has been sent"
     },
     edu:{
       level1:"Beginer",
@@ -332,7 +389,11 @@ export default new class Language {
       "password": "Password",
       "forgot": "Forgot Password",
       "login": "Login",
-      "remember": "Remember password on this computer"
+      "remember": "Remember password on this computer",
+      "notp":"Enter your password",
+      "pLength":"Password length is to big",
+      "resetP":"Reset Password",
+      "createU":"Create User"
     },
     "create_user_screen": {
       "title": "New User",
@@ -346,7 +407,10 @@ export default new class Language {
       "confirm": "Confirm Password",
       "create_user": "Register",
       "have_account": "Already have an account?",
-      "login_here": "Login screen"
+      "login_here": "Login screen",
+      "pf":"Personal",
+      "company":"Company",
+      "cmpName":"Company Name"
     },
     "change_password_screen": {
       "title": "Change Password",
