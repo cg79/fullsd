@@ -15,7 +15,8 @@
         "js",
         "fonts",
         "favicon.ico",
-		"images"
+		"images",
+		"src/images/slider"
       ],
       "index": "index.html",
       "main": "main.ts",
