@@ -11,9 +11,12 @@ const logger = require('./../logger/logger.js')();
 module.exports = function () {
   let models = {
     mainPath: './templates/',
+    appSettings: function () {
+      return jsonfile.readFileSync("./settings/app.json");
+    },
     transporter: null,
     emailMessageReceived(obj){
-        
+
         if (!obj.langId) {
             obj.langId = "ro";
         }
@@ -26,7 +29,7 @@ module.exports = function () {
         var templatePath = this.mainPath + langId + "/message.html";
         var htmlResult = renderer.render(templatePath, obj);
 
-       
+
         var data = {
             to: "office@fullsd.com",
             subject: "Message recived",
@@ -180,18 +183,7 @@ module.exports = function () {
 
           // create reusable transporter object using SMTP transport
           if (this.transporter == null) {
-            const smtpConfig = {
-              host:"ran.gazduire.ro",
-              port:587,
-              secure:false,
-              auth: {
-                user: 'office@fullsd.com',
-                pass: 'tarantula9379'
-              },
-              tls:{
-                rejectUnauthorized: false
-              }
-            };
+            const smtpConfig = this.appSettings();
            this.transporter = nodemailer.createTransport(smtpConfig);
           }
 
