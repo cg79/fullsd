@@ -179,7 +179,7 @@ module.exports = function () {
             // }
 
           // create reusable transporter object using SMTP transport
-      console.log(config.smtpSettings);
+      // console.log(config.smtpSettings);
           if (this.transporter == null) {
             const smtpConfig = config.smtpSettings;
            this.transporter = nodemailer.createTransport(smtpConfig);
