@@ -11,9 +11,6 @@ const logger = require('./../logger/logger.js')();
 module.exports = function () {
   let models = {
     mainPath: './templates/',
-    appSettings: function () {
-      return jsonfile.readFileSync("./settings/app.json");
-    },
     transporter: null,
     emailMessageReceived(obj){
 
@@ -182,8 +179,9 @@ module.exports = function () {
             // }
 
           // create reusable transporter object using SMTP transport
+      console.log(config.smtpSettings);
           if (this.transporter == null) {
-            const smtpConfig = this.appSettings();
+            const smtpConfig = config.smtpSettings;
            this.transporter = nodemailer.createTransport(smtpConfig);
           }
 
