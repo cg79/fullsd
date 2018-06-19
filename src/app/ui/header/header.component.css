@@ -4,7 +4,9 @@ header{
   margin-bottom: 0;
   /*background-color: #fcfcfc;*/
 }
-
+.p15{
+  padding: 15px;
+}
 .icon-bar{
   background-color: #888;
 }

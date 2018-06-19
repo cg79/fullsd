@@ -137,11 +137,16 @@ a.woocommerce-LoopProduct-link
   display: flex;
   flex-wrap: wrap;
   .item{
-    flex: 0 48%;
-    background-color: white;
-    margin: 5px;
-    padding: 5px;
+    flex: 0 50%;
+    background-color: #F5F7FA;
+    display: inline-grid;
+
     border-radius: 8px;
     //border: red solid;
+    .item-content{
+      background-color: white;
+      margin: 5px;
+      padding: 5px;
+    }
   }
 }
