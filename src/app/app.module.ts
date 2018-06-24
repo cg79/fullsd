@@ -14,7 +14,7 @@ import { AppRoutingModule }        from './routes/app-routing.module';
 import { HomeComponent }        from './home/home.component';
 import { NotFoundComponent }        from './not-found/notfound.component';
 import { ObjectKeysPipe }  from './pipes/objectKeys.pipe';
-import { EscapeHtmlPipe } from './pipes/keep-html.pipe';
+// import { EscapeHtmlPipe } from './pipes/keep-html.pipe';
 import { Angular2SocialLoginModule } from 'angular2-social-login';
 import { HeaderComponent } from './ui/header/header.component';
 import  { TypoComponent } from './ui/type/typo.component';
@@ -59,7 +59,7 @@ const providers = {
     HomeComponent,
     NotFoundComponent,
     ObjectKeysPipe,
-    EscapeHtmlPipe,
+    // EscapeHtmlPipe,
     HeaderComponent,
     TypoComponent,
     HomePresentationComponent,

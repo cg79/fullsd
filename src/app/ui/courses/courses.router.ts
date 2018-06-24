@@ -5,7 +5,7 @@ import { CoursesComponent } from './courses.component';
 const Courses_ROUTER: Routes = [
   // { path: 'load-me', component: CreateUserComponent },
   {
-    path: 'courses',
+    path: '',
     component: CoursesComponent
   }
 ];
