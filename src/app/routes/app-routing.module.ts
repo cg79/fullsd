@@ -16,7 +16,7 @@ const appRoutes: Routes = [
   },
   {
     path:'courses',
-    component:CoursesComponent
+    loadChildren: '../ui/courses/courses-module#CoursesModule'
   },
 
 
