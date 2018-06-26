@@ -12,14 +12,15 @@
 
       <div  class="list-group-item card ng-star-inserted">
 
-        <div  class="flexbox-item fill-area content flexbox-item-grow">
+        <div  class="flexbox-item fill-area content flexbox-item-grow ">
           <div  class="fill-area-content1 flexbox-item-grow">
             <div  class="row">
-              <div  class="panel panel-default">
+              <div  class="panel panel-default scroll">
                 <div  class="panel-heading">
                   <div class="newsObject.titleClass">
-                    <div [innerHTML]="entry.title | keepHtml">
-
+                    <div class="header">
+                      <img src="{{entry.img}}"/>
+                      <label>{{entry.title}}</label>
                     </div>
                   </div>
                 </div>
