@@ -49,7 +49,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const providers = {
   'facebook': {
-sni    'clientId': '2046457209013195',
+    'clientId': '2046457209013195',
     'apiVersion': 'v2.11' //like v2.4
   }};
 
