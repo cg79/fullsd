@@ -86,7 +86,8 @@ const providers = {
     HttpModule,
     ModalModule.forRoot(),
     NgbModule.forRoot(),
-    SimpleNotificationsModule.forRoot()
+    SimpleNotificationsModule.forRoot(),
+    BrowserModule.withServerTransition({appId: 'FullSD'})
   ],
 
   providers: [HttpWrapperService, AuthGuard, PubSubService, SocketService, UtilsService, LocalizationService, NewsService ],

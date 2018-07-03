@@ -8,6 +8,7 @@ import {
   transition, query, stagger
 } from '@angular/animations';
 import {LocalizationService} from "../services/localization/localization.service";
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -34,10 +35,18 @@ import {LocalizationService} from "../services/localization/localization.service
   private  httpService: HttpWrapperService;
   public codeResult : any;
 
-  constructor(httpService: HttpWrapperService, public localizationService: LocalizationService)
+  constructor(httpService: HttpWrapperService, public localizationService: LocalizationService, meta: Meta, title: Title)
   {
     this.httpService = httpService;
-    this.text = 'console.log("start");';
+    // Sets the <title></title>
+    title.setTitle('Home');
+
+    // Sets the <meta> tag for the page
+    meta.addTags([
+      { name: 'author', content: 'FullSD' },
+      { name: 'description', content: 'This is a description.' },
+    ]);
+
   }
 
   state: string = 'small';
