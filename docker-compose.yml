@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: db
+    ports:
+      - '27017:27017'
+    volumes:
+      - db_data:/data/db
+  web:
+    image: node:latest
+    build:
+     context: ./
+    user: "node"
+    volumes:
+      - ./:/home/fullsdvolume
+    ports:
+      - 4200:4200
+    command: "npm start"
+    links:
+      - mongodb
+
+volumes:
+  db_data:
