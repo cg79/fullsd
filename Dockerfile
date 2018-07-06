@@ -19,7 +19,7 @@ RUN npm install -g @angular/cli@1.7.4 --unsafe
 COPY ./ ./
 
 # EXPOSE '${PORT}'
-ENV PORT 3000
-EXPOSE 3000
+ENV PORT 4200
+EXPOSE 4200
 
 CMD [ "npm", "start" ]
