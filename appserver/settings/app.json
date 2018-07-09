@@ -3,7 +3,7 @@
   "appUIUrl": "https://fullsd.com",
   "tokenPassword": "AkzjrKs892321w4Lu87^%7(&6_IApq3AwergJnmqaWfkEq98!eIU5vqP9L2O4c1",
   "mongodb": {
-    "url": "mongodb://mongodb/onlinecoding",
+    "url": "mongodb://localhost:27017/onlinecoding",
     "user": "",
     "password": ""
   },
