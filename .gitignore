@@ -5,7 +5,7 @@
 /out-tsc
 
 /appserver/uploads
-/appserver/settings
+# /appserver/settings
 # dependencies
 /node_modules
 /appserver/node_modules

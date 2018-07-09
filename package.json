@@ -8,7 +8,10 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "installserver" : "cd appserver && npm install",
+    "startserver" : "cd appserver && npm install",
+    "env": "env | grep execpath"
   },
   "private": true,
   "dependencies": {
