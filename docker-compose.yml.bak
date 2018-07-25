@@ -6,11 +6,13 @@ services:
     build: .
     ports:
     - "3001:80"
-    links:
+    depends_on:
     - mongo
   mongo:
     container_name: mongo_container
     image: mongo:latest
+    expose:
+      - '27017'
     ports:
       - "27017:27017"
     volumes:

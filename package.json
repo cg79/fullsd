@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "installserver" : "cd appserver && npm install",
-    "startserver" : "cd appserver && npm install",
+    "startserver" : "cd appserver && node server_koa_2.js",
     "env": "env | grep execpath"
   },
   "private": true,

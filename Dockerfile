@@ -40,10 +40,9 @@ RUN npm run installserver
 
 RUN npm install koa-jwt -q
 
-CMD [ "npm", "startserver" ]
+CMD [ "node", "appserver/server_koa_2.js" ]
 
-
-CMD [ "npm", "start" ]
+#CMD [ "npm", "start" ]
 
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
@@ -66,4 +65,5 @@ COPY /dist/* /usr/share/nginx/html/
 ## From 'builder' stage copy over the artifacts in dist folder to default nginx public folder
 #COPY --from=builder /fullsd/dist/* /usr/share/nginx/html/
 
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
