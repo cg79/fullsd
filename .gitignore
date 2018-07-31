@@ -10,6 +10,9 @@
 /node_modules
 /appserver/node_modules
 /appserver/angular
+/client/node_modules
+/dist1
+/dist-prerender
 
 # IDEs and editors
 /.idea

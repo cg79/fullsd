@@ -1,0 +1,1 @@
+https://blog.strongbrew.io/prerendering-angular-apps/
