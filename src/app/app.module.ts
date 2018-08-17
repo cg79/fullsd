@@ -63,8 +63,6 @@ const providers = {
     HeaderComponent,
     TypoComponent,
     HomePresentationComponent,
-    // ResetPasswordComponent,
-    // FooterComponent,
     ConfirmEmailComponent,
     ContactComponent,
     ShowContactDialogComponent,
