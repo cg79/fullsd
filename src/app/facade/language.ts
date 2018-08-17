@@ -5,12 +5,21 @@
 export default new class Language {
 
   RO: any = {
-    who:{
+    cursuri: {
+      desc: "Cursurile de informatica se adreseaza persoanelor din Cluj si lista lor este prezentata mai jos",
+      title: "Lista cursurilor"
+    },
+    who: {
+      desct:"Descriere",
+      desc: {
+        what: "Suntem un grup mic de programatori, avand o experienta mare in realizarea produselor soft si am creat o companie care sa ofere aceste servicii. " +
+        "Daca aveti nevoie de orice colaborare va rugam sa ne contactati. "
+      },
       who:"Cine Suntem",
       n1:"Claudiu Gombos",
-      n1Desc:"Arhitect, certificari obtinute, programator, coordonator si trainer",
+      n1Desc:"Arhitect, certificari obtinute, programator, coordonator si trainer. Peste 15 ani de experienta",
       n2:"Ioan Lazar",
-      n2Desc: "Cadru didactic, programator, coordonator, consultant si arhitect",
+      n2Desc: "Cadru didactic , programator, coordonator, consultant si arhitect",
       echipa:"Echipa",
       echipaDesc:"Toti participantii la cursuri au facut progrese enorme, sunt apreciati si entuziasmati sa participe la realizarea produselor soft.Oferim sprijin pentru integrarea intr-o echipa atat a participantilor la curs cat si programatorilor care ar dorii sa muncim impreuna"
     },
@@ -224,12 +233,22 @@ export default new class Language {
     }
   };
   EN: any = {
+    cursuri: {
+      desc: "Software courses are addressed to people in Cluj and the list is presented below",
+      title: "Courses list"
+    },
     who:{
+      desct:"Description",
+      desc: {
+        what: "We are a start-up software company located in eastern Europe (Cluj-Napoca). " +
+        "Having a big experience in software development we are searching for new opportunities, projects, collaboration with other companies. "+
+        " If you need our services, please contact us. "
+      },
       who:"Who We Are",
       n1:"Claudiu Gombos",
       n1Desc:"Architect, certifications, programmer, coordinator and trainer",
       n2:"Ioan Lazar",
-      n2Desc: "Teacher, programmer, coordinator, consultant and architect",
+      n2Desc: "Developer, coordinator, consultant, architect and a teacher who guided thousands of students",
       echipa:"The team",
       echipaDesc:" All participants in the courses have made enormous advances, are appreciated and excited to participate in the development of soft products. We offer support for integrating into a team of both course participants and programmers who want to work together"
     },

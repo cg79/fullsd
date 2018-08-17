@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {HttpWrapperService} from '../../services/http/httpService';
 import language from '../../facade/language';
 import {PubSubService} from '../../services/pubsub/pubsub';
+import {LocalizationService} from "../../services/localization/localization.service";
 
 @Component({
   selector: 'app-courses',
@@ -15,7 +16,7 @@ export class CoursesComponent implements OnInit {
 
   constructor(private httpService: HttpWrapperService,
               private router: Router,
-              private pubSubService: PubSubService
+              private pubSubService: PubSubService,public localizationService: LocalizationService
   ) {
     pubSubService.subscribe('change-language', (val)=>{
       // this.language = language[val];
@@ -301,7 +302,7 @@ export class CoursesComponent implements OnInit {
       text: 'It will be of great importance to modulate the application, read the UML instructions on which the functionalities will be implemented, the PPE concepts will be progressively implemented with the help of the typographic language.'
     },
     {
-      title:"Testare",
+      title:"Testing",
       img:"images/slider/testing.png",
       text: 'The TDD part will be presented from the first sessions; The team will do some exercises using this approach. In addition to TDD, Jasmine (used to test the application created with Angular 5) will be presented, Mocha and Chai will still be present on the TDD side. React.js will use enzymes and the automatic test part of the created application will be covered by webdriver.io}'
     },
@@ -329,7 +330,7 @@ export class CoursesComponent implements OnInit {
       'Redux will be explained using tutorial, source code and 7 videos'
     },
     {
-      title:"Mmobile",
+      title:"Mobile",
       img:"images/slider/mobile.png",
       text:'Mobile applications will be presented using IOnic. Due to the time, native Ios or android applications are left aside, but IOnic offers an enormous advantage in creating a mobile application. The most important parts to be discussed are the notifications and the deploying part'
     },

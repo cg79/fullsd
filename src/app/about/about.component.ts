@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LocalizationService} from "../services/localization/localization.service";
 
 @Component({
   selector: 'app-about',
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
   ngOnInit(): void {
   }
 
-  constructor() {
+  constructor(public localizationService: LocalizationService) {
 
   }
 
