@@ -12,7 +12,8 @@ export default new class Language {
     who: {
       desct:"Descriere",
       desc: {
-        what: "Suntem un grup mic de programatori, avand o experienta mare in realizarea produselor soft si am creat o companie care sa ofere aceste servicii. " +
+        what: "Suntem un grup mic de programatori, avand o experienta mare in realizarea produselor soft si am creat o companie "+
+        "care incepand cu luna august 2018, ofera aceste servicii la un pret avantajos. " +
         "Daca aveti nevoie de orice colaborare va rugam sa ne contactati. "
       },
       who:"Cine Suntem",
@@ -241,8 +242,8 @@ export default new class Language {
       desct:"Description",
       desc: {
         what: "We are a start-up software company located in eastern Europe (Cluj-Napoca). " +
-        "Having a big experience in software development we are searching for new opportunities, projects, collaboration with other companies. "+
-        " If you need our services, please contact us. "
+        "Having a big experience in software development, we are searching for new opportunities, projects, collaboration with other companies. "+
+        "We started in August 2018 with confidence that our low prices and the quality offered are seen as an advantage. "
       },
       who:"Who We Are",
       n1:"Claudiu Gombos",
