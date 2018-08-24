@@ -15,7 +15,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.httpService.postJson('/api/pub', {
+    this.httpService.postJson('/fullsd.com/api/pub', {
       proxy: {
         method:"add",
         module: "log"
