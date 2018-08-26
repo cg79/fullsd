@@ -109,71 +109,62 @@
           <!--</ul>-->
           <!--</div>-->
           <!--</li>-->
-          <li class="menu-btn navli" data-toggle="modal">
-            <!--<span *ngIf="user">{{user.name}}</span>-->
-            <a *ngIf="!user" routerLink="user/login" routerLinkActive="active"><i class="ficon fa fa-sign-in"
-                                                                              aria-hidden="true"></i>{{localizationService.language.menu.login}}
-            </a>
-          </li>
-          <li class="menu-btn1 navli" *ngIf="user">
-            <!--<div class="dropdown" dropdown>-->
-            <!--<a dropdown-open><i class="ficon fa fa-cog" aria-hidden="true"></i> Setari</a>-->
-            <!--<ul class="dropdown-menu">-->
-            <!---->
-            <!--<li class="navli"><a href="#" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>-->
-            <!--<li  class="navli"><a href="#" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Datele mele</a></li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <a ngbDropdown class="d-inline-block1 dropdown1">
-              <a class="btn1 btn-outline-primary1 cp" id="dropdownBasic1" ngbDropdownToggle><i class="ficon fa fa-cog"
-                                                                                               aria-hidden="true"></i>{{localizationService.language.menu.setari}}</a>
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <ul class="nob ulcust">
-                  <li class="navli">
-                    <button type="button" class="btn1 btn-link" (click)="logout()">
-                      <i class="fa fa-sign-out" aria-hidden="true"></i>
-                      {{localizationService.language.menu.logout}}
-                    </button>
-                  </li>
-
-                  <li class="navli">
-                    <button class="btn1 btn-link" routerLink="/edituser" routerLinkActive="active">
-                      <i class="ficon fa fa-question"  aria-hidden="true"></i>
-                      {{localizationService.language.menu.personaldata}}
-                    </button>
-
+          <!--<li class="menu-btn navli" data-toggle="modal">-->
+            <!--<a *ngIf="!user" routerLink="user/login" routerLinkActive="active"><i class="ficon fa fa-sign-in"-->
+                                                                              <!--aria-hidden="true"></i>{{localizationService.language.menu.login}}-->
+            <!--</a>-->
+          <!--</li>-->
+          <!--<li class="menu-btn1 navli" *ngIf="user">-->
+            <!--<a ngbDropdown class="d-inline-block1 dropdown1">-->
+              <!--<a class="btn1 btn-outline-primary1 cp" id="dropdownBasic1" ngbDropdownToggle><i class="ficon fa fa-cog"-->
+                                                                                               <!--aria-hidden="true"></i>{{localizationService.language.menu.setari}}</a>-->
+              <!--<div ngbDropdownMenu aria-labelledby="dropdownBasic1">-->
+                <!--<ul class="nob ulcust">-->
+                  <!--<li class="navli">-->
                     <!--<button type="button" class="btn1 btn-link" (click)="logout()">-->
-                    <!--<i class="fa fa-sign-out" aria-hidden="true"></i>-->
-                    <!--Datele mele-->
+                      <!--<i class="fa fa-sign-out" aria-hidden="true"></i>-->
+                      <!--{{localizationService.language.menu.logout}}-->
                     <!--</button>-->
-                  </li>
+                  <!--</li>-->
 
-                  <li class="navli">
-                    <button class="btn1 btn-link" routerLink="/edituser" routerLinkActive="active">
-                      <i class="ficon fa fa-question"  aria-hidden="true"></i>
-                      {{userCount}} online users
-                    </button>
-
-                    <!--<button type="button" class="btn1 btn-link" (click)="logout()">-->
-                    <!--<i class="fa fa-sign-out" aria-hidden="true"></i>-->
-                    <!--Datele mele-->
+                  <!--<li class="navli">-->
+                    <!--<button class="btn1 btn-link" routerLink="/edituser" routerLinkActive="active">-->
+                      <!--<i class="ficon fa fa-question"  aria-hidden="true"></i>-->
+                      <!--{{localizationService.language.menu.personaldata}}-->
                     <!--</button>-->
-                  </li>
+
+                    <!--&lt;!&ndash;<button type="button" class="btn1 btn-link" (click)="logout()">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<i class="fa fa-sign-out" aria-hidden="true"></i>&ndash;&gt;-->
+                    <!--&lt;!&ndash;Datele mele&ndash;&gt;-->
+                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                  <!--</li>-->
+
+                  <!--<li class="navli">-->
+                    <!--<button class="btn1 btn-link" routerLink="/edituser" routerLinkActive="active">-->
+                      <!--<i class="ficon fa fa-question"  aria-hidden="true"></i>-->
+                      <!--{{userCount}} online users-->
+                    <!--</button>-->
+
+                    <!--&lt;!&ndash;<button type="button" class="btn1 btn-link" (click)="logout()">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<i class="fa fa-sign-out" aria-hidden="true"></i>&ndash;&gt;-->
+                    <!--&lt;!&ndash;Datele mele&ndash;&gt;-->
+                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                  <!--</li>-->
 
 
 
-                  <!--<li class="navli"><button class="btn1 btn-link"  routerLink="/javascript" routerLinkActive="active">js 111</button></li>-->
+                  <!--&lt;!&ndash;<li class="navli"><button class="btn1 btn-link"  routerLink="/javascript" routerLinkActive="active">js 111</button></li>&ndash;&gt;-->
 
-                  <li class="navli" *ngIf="canEditNews">
-                    <button class="btn1 btn-link"  routerLink="/addquestions" routerLinkActive="active"><i class="ficon fa fa-question"
-                                                                               aria-hidden="true"></i> Adaugare
-                      intrebare</button>
-                  </li>
-                </ul>
-              </div>
+                  <!--<li class="navli" *ngIf="canEditNews">-->
+                    <!--<button class="btn1 btn-link"  routerLink="/addquestions" routerLinkActive="active"><i class="ficon fa fa-question"-->
+                                                                               <!--aria-hidden="true"></i> Adaugare-->
+                      <!--intrebare</button>-->
+                  <!--</li>-->
+                <!--</ul>-->
+              <!--</div>-->
 
-            </a>
-          </li>
+            <!--</a>-->
+          <!--</li>-->
 
           <li class="navli lang">
               <app-show-contact-dialog></app-show-contact-dialog>
